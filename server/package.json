@@ -1,0 +1,20 @@
+{
+  "name": "quikwink-email-server",
+  "version": "1.0.0",
+  "description": "Email server for Quikwink",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1",
+    "rate-limiter-flexible": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
