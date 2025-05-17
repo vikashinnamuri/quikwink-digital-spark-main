@@ -17,11 +17,18 @@ const PORT = config.port;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:8080', 'http://localhost:3000', config.clientURL],
+  origin: ['http://localhost:8080', 'http://localhost:3000', 'http://localhost:5173', config.clientURL],
   methods: ['POST', 'GET', 'OPTIONS'],
   credentials: true
 }));
 app.use(express.json());
+
+// In production, serve the static files from the React app build directory
+if (process.env.NODE_ENV === 'production') {
+  const staticPath = path.resolve(__dirname, '../dist');
+  console.log('Serving static files from:', staticPath);
+  app.use(express.static(staticPath));
+}
 
 // Simple rate limiting middleware
 const requestCounts = {};
@@ -157,6 +164,7 @@ app.post('/api/send-email', rateLimiter, logEmail, async (req, res) => {
     // Send email
     await transporter.sendMail(mailOptions);
     
+    console.log(`Email sent successfully to: ${config.email.recipient}`);
     res.status(200).json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
     console.error('Email error:', error);
@@ -179,11 +187,19 @@ app.get('/api/status', (req, res) => {
   });
 });
 
+// For production: Serve React app for any unmatched routes
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  });
+}
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Email server configured for: ${config.email.user}`);
   console.log(`App password being used: ${config.email.pass ? config.email.pass.substring(0, 3) + '***' : 'none'}`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 })
 .on('error', (err) => {
   console.error('Failed to start server:', err);

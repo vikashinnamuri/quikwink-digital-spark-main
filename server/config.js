@@ -8,32 +8,32 @@
  * 3. Select "Mail" as the app and "Other" as the device
  * 4. Enter a name for the app password (e.g., "Quikwink Email Server")
  * 5. Click "Generate" and Google will provide you with a 16-character app password
- * 6. Copy that password and replace 'your_app_password_here' below
+ * 6. Copy that password and use it in your environment variables or .env file
  */
 
 module.exports = {
   port: process.env.PORT || 3000,
   
-  // Client URL for CORS (add your production URL when deploying)
+  // Client URL for CORS (update the default for your production domain)
   clientURL: process.env.CLIENT_URL || 'https://quikwink.com',
   
   // Email settings
   email: {
-    // Gmail account details
-    user: process.env.EMAIL_USER || 'vikashinnamuri@gmail.com',
-    pass: process.env.EMAIL_PASS || 'xoga rjjh reyt drqu',
-    recipient: process.env.EMAIL_RECIPIENT || 'vikashinnamuri@gmail.com',
+    // Gmail account details (use environment variables in production)
+    user: process.env.EMAIL_USER || 'lohapriyamanthiram@gmail.com',
+    pass: process.env.EMAIL_PASS || 'fxhf xajp uodi dahu',
+    recipient: process.env.EMAIL_RECIPIENT || 'vikashinnamuri@gmail.com, lohapriyamanthiram@gmail.com',
     
     // Email options
-    sender_name: 'Quikwink Contact Form',
-    subject_prefix: 'Quikwink Contact: ',
+    sender_name: process.env.SENDER_NAME || 'Quikwink Contact Form',
+    subject_prefix: process.env.SUBJECT_PREFIX || 'Quikwink Contact: ',
     
-    // SMTP configuration (only change if not using Gmail)
+    // SMTP configuration (optimized for Gmail)
     smtp: {
-      service: 'gmail',      // Use 'gmail' for Gmail
-      host: 'smtp.gmail.com', // Only used if service is not specified
-      port: 465,              // 465 for SSL, 587 for TLS
-      secure: true            // true for 465, false for other ports
+      service: process.env.EMAIL_SERVICE || 'gmail',
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      secure: process.env.EMAIL_SECURE === 'true' ? true : false
     }
   }
 }; 

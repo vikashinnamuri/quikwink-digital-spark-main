@@ -7,7 +7,7 @@ import IndustrySection from '@/components/IndustrySection';
 import ApproachSection from '@/components/ApproachSection';
 import ContactForm from '@/components/ContactForm';
 import { BackgroundPaths } from '@/components/ui/background-paths';
-import { Search, Info, Users, Settings, Star, Heart, ShoppingCart, Truck, GraduationCap } from 'lucide-react';
+import { Search, Info, Users, Settings, Star, Heart, ShoppingCart, Truck, GraduationCap, Code, Bot, Activity, Database, CircuitBoard, Shield } from 'lucide-react';
 import DisplayCards from "@/components/ui/display-cards";
 import { motion } from "framer-motion";
 
@@ -48,24 +48,24 @@ const Index = () => {
   
   const services = [
     {
-      title: "Healthcare Solutions",
-      description: "Unlock predictive insights and automate complex workflows with tailored AI solutions that adapt to your unique healthcare needs.",
-      icon: <Heart />
+      title: "Data Overload Challenges",
+      description: "Transform overwhelming data into actionable insights with our custom analytics solutions that prioritize what matters most to your business.",
+      icon: <Database />
     },
     {
-      title: "Retail Innovation",
-      description: "Build resilient, scalable platforms and applications with our comprehensive development expertise across frontend, backend, and DevOps.",
-      icon: <ShoppingCart />
+      title: "Legacy System Integration",
+      description: "Bridge the gap between your existing systems and modern technologies with our seamless integration solutions that preserve your investments.",
+      icon: <Settings />
     },
     {
-      title: "Logistics Excellence",
-      description: "Revolutionize your operations and customer experience with strategic implementation of cutting-edge technologies.",
-      icon: <Truck />
+      title: "Security Vulnerabilities",
+      description: "Protect your business from evolving cyber threats with our comprehensive security solutions that safeguard your data and maintain customer trust.",
+      icon: <Shield />
     },
     {
-      title: "Educational Technology",
-      description: "Navigate complex technological landscapes with expert guidance, ensuring your technology investments deliver maximum educational value.",
-      icon: <GraduationCap />
+      title: "Operational Inefficiencies",
+      description: "Eliminate bottlenecks and streamline processes with our automation solutions that reduce manual work and increase productivity across your organization.",
+      icon: <Activity />
     }
   ];
   
@@ -138,33 +138,49 @@ const Index = () => {
 
   const industryCards = [
     {
-      icon: <Heart className="size-8 text-quikwink-neon" />,
-      title: "Healthcare",
-      description: "Our healthcare solutions leverage AI to predict patient admission patterns, optimize resource allocation, and secure sensitive data while maintaining regulatory compliance.",
+      icon: <Bot className="size-10 text-quikwink-neon" />,
+      title: "Automation",
+      description: "Transform repetitive tasks into automated workflows that reduce errors and free up your team to focus on strategic initiatives.",
       iconClassName: "text-quikwink-neon",
       titleClassName: "text-white",
       className: "hover:border-quikwink-neon/30"
     },
     {
-      icon: <ShoppingCart className="size-8 text-quikwink-neon" />,
-      title: "Retail",
-      description: "We help retailers implement intelligent inventory management systems, personalized recommendation engines, and data-driven pricing strategies that boost margins.",
+      icon: <Code className="size-10 text-quikwink-neon" />,
+      title: "Full Stack Development",
+      description: "Build resilient, scalable platforms and applications with our comprehensive development expertise across frontend, backend, and DevOps.",
       iconClassName: "text-quikwink-neon",
       titleClassName: "text-white",
       className: "hover:border-quikwink-neon/30"
     },
     {
-      icon: <Truck className="size-8 text-quikwink-neon" />,
-      title: "Logistics",
-      description: "Our logistics solutions provide real-time tracking, route optimization algorithms, and predictive maintenance systems that reduce costs while improving delivery performance.",
+      icon: <Activity className="size-10 text-quikwink-neon" />,
+      title: "Business Analysis",
+      description: "Identify opportunities for improvement and innovation with our comprehensive business analysis services that align technology with goals.",
       iconClassName: "text-quikwink-neon",
       titleClassName: "text-white",
       className: "hover:border-quikwink-neon/30"
     },
     {
-      icon: <GraduationCap className="size-8 text-quikwink-neon" />,
-      title: "Education",
-      description: "We develop adaptive learning platforms, secure student information systems, and automated administrative tools that help educational institutions deliver better outcomes.",
+      icon: <Database className="size-10 text-quikwink-neon" />,
+      title: "Data Science",
+      description: "Extract meaningful insights from your data with advanced analytics, statistical modeling, and visualization techniques that support decisions.",
+      iconClassName: "text-quikwink-neon",
+      titleClassName: "text-white",
+      className: "hover:border-quikwink-neon/30"
+    },
+    {
+      icon: <CircuitBoard className="size-10 text-quikwink-neon" />,
+      title: "ML Implementation",
+      description: "Enhance your business capabilities with custom machine learning models that recognize patterns, make predictions, and continuously improve.",
+      iconClassName: "text-quikwink-neon",
+      titleClassName: "text-white",
+      className: "hover:border-quikwink-neon/30"
+    },
+    {
+      icon: <Star className="size-10 text-quikwink-neon" />,
+      title: "AI Development",
+      description: "Create intelligent systems and applications that adapt to your business needs with our end-to-end AI development services and expertise.",
       iconClassName: "text-quikwink-neon",
       titleClassName: "text-white",
       className: "hover:border-quikwink-neon/30"
@@ -298,6 +314,22 @@ const Index = () => {
       
       <div className="section-divider" />
       
+      {/* Industries Section */}
+      <section id="industries">
+        <div className="container-section">
+          <h2 className="heading-lg text-center mb-4">Industries We Serve</h2>
+          <p className="text-white/70 text-center max-w-2xl mx-auto mb-16">
+            Our expertise spans across multiple domains, allowing us to deliver specialized solutions for various industry needs.
+          </p>
+          
+          <div className="w-full max-w-7xl mx-auto px-4">
+            <DisplayCards cards={industryCards} />
+          </div>
+        </div>
+      </section>
+      
+      <div className="section-divider" />
+      
       {/* Services Section */}
       <section id="services">
         <div className="container-section">
@@ -306,7 +338,7 @@ const Index = () => {
             We combine cutting-edge technology with deep domain expertise to deliver solutions that transform how businesses operate and compete.
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4">
             {services.map((service, index) => (
               <ServiceCard 
                 key={index}
@@ -315,24 +347,6 @@ const Index = () => {
                 icon={service.icon}
               />
             ))}
-          </div>
-        </div>
-      </section>
-      
-      <div className="section-divider" />
-      
-      {/* Industries Section */}
-      <section id="industries">
-        <div className="container-section">
-          <h2 className="heading-lg text-center mb-4">Industries We Serve</h2>
-          <p className="text-white/70 text-center max-w-2xl mx-auto mb-16">
-            Our tailored solutions address specific challenges across multiple sectors, delivering measurable improvements where it matters most.
-          </p>
-          
-          <div className="flex min-h-[400px] w-full items-center justify-center">
-            <div className="w-full max-w-6xl">
-              <DisplayCards cards={industryCards} />
-            </div>
           </div>
         </div>
       </section>
@@ -388,6 +402,12 @@ const Index = () => {
                     <Info size={16} className="text-quikwink-neon" />
                   </div>
                   <span className="text-white/80">vikashinnamuri@gmail.com</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
+                    <Info size={16} className="text-quikwink-neon" />
+                  </div>
+                  <span className="text-white/80">lohapriyamanthiram@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">

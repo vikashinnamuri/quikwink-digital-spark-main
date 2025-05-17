@@ -1,56 +1,52 @@
-# Welcome to your Lovable project
+# Quikwink Digital Solutions
 
-## Project info
+## About This Project
 
-**URL**: https://lovable.dev/projects/1b7bffec-b6df-4158-a9ce-9eeb762bdfe1
+Quikwink is a modern tech company that specializes in AI solutions and custom software development. This repository contains the code for the Quikwink marketing website.
 
-## How can I edit this code?
+## Project Features
 
-There are several ways of editing your application.
+- Modern React/TypeScript frontend
+- Responsive design with TailwindCSS
+- Interactive UI components built with shadcn-ui
+- Custom email server for contact form
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/1b7bffec-b6df-4158-a9ce-9eeb762bdfe1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+Follow these steps to run the project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd quikwink-digital-spark
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install the necessary dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server with auto-reloading
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Starting the Email Server
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To enable the contact form functionality, you need to run the email server:
 
-**Use GitHub Codespaces**
+```sh
+# Navigate to the server directory
+cd server
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Install server dependencies (first time only)
+npm install
 
-## What technologies are used for this project?
+# Start the email server
+node server.js
+```
+
+## Technology Stack
 
 This project is built with:
 
@@ -59,15 +55,18 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Node.js/Express (email server)
 
-## How can I deploy this project?
+## Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/1b7bffec-b6df-4158-a9ce-9eeb762bdfe1) and click on Share -> Publish.
+- `/src` - React application source code
+- `/public` - Static assets
+- `/server` - Email server code
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+The site can be deployed to any static web hosting service. The email server should be deployed to a Node.js hosting environment.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Custom Domain Setup
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+To connect a custom domain, configure your DNS provider to point to your hosting service's IP address or use their domain configuration tools.

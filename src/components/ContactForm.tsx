@@ -3,8 +3,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Mail, Send, User, Building2, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Email server URL - change this to your production server URL when deployed
-const EMAIL_SERVER_URL = 'http://localhost:3000/api/send-email';
+// Use relative URL for production compatibility
+const EMAIL_SERVER_URL = '/api/send-email';
 
 const ContactForm: React.FC = () => {
   const { toast } = useToast();
@@ -39,12 +39,13 @@ const ContactForm: React.FC = () => {
         body: JSON.stringify(formValues),
       });
       
+      const responseData = await response.json();
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to send message');
+        throw new Error(responseData.message || 'Failed to send message');
       }
       
-      console.log("Email sent successfully!");
+      console.log("Email sent successfully:", responseData);
       
       // Show success message
       toast({
@@ -58,7 +59,7 @@ const ContactForm: React.FC = () => {
       console.error("Failed to send email:", error);
       toast({
         title: "Error sending message",
-        description: "Please try again or contact us directly at vikashinnamuri@gmail.com",
+        description: "Please try again or contact us directly at vikashinnamuri@gmail.com or lohapriyamanthiram@gmail.com",
         variant: "destructive"
       });
     } finally {
@@ -147,11 +148,6 @@ const ContactForm: React.FC = () => {
               onBlur={() => setFocusedField(null)}
             ></textarea>
           </div>
-        </div>
-        
-        <div className="text-white/70 text-sm mb-6 flex items-center bg-quikwink-neon/5 p-3 rounded-lg border border-quikwink-neon/20">
-          <Mail className="inline-block mr-2 text-quikwink-neon" size={16} />
-          Messages will be sent to: vikashinnamuri@gmail.com
         </div>
         
         <motion.button 
