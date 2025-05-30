@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 const config = require('./config');
 const fs = require('fs');
 const path = require('path');
+const { check, validationResult } = require('express-validator');
+const helmet = require('helmet');
 
 // Load environment variables
 dotenv.config();
@@ -16,6 +18,7 @@ const app = express();
 const PORT = config.port;
 
 // Middleware
+app.use(helmet()); // Add helmet for security headers
 app.use(cors({
   origin: ['http://localhost:8080', 'http://localhost:3000', 'http://localhost:5173', config.clientURL],
   methods: ['POST', 'GET', 'OPTIONS'],
@@ -95,10 +98,15 @@ const transporter = nodemailer.createTransport({
   service: config.email.smtp.service,
   host: config.email.smtp.host,
   port: config.email.smtp.port,
-  secure: config.email.smtp.secure,
+  secure: false, // Use STARTTLS for port 587
   auth: {
     user: config.email.user,
     pass: config.email.pass
+  },
+  tls: {
+    // Required for Gmail on port 587 with secure: false
+    ciphers: 'SSLv3',
+    rejectUnauthorized: false 
   }
 });
 
@@ -111,28 +119,47 @@ transporter.verify(function(error, success) {
   }
 });
 
-// Email API endpoint with rate limiting and logging
-app.post('/api/send-email', rateLimiter, logEmail, async (req, res) => {
+// Validation middleware for email endpoint
+const validateEmail = [
+  check('name')
+    .trim()
+    .notEmpty().withMessage('Name is required')
+    .isLength({ max: 100 }).withMessage('Name cannot exceed 100 characters')
+    .escape(), // Sanitize name
+
+  check('email')
+    .trim()
+    .notEmpty().withMessage('Email is required')
+    .isEmail().withMessage('Please provide a valid email address')
+    .normalizeEmail(), // Sanitize email
+
+  check('company')
+    .trim()
+    .isLength({ max: 100 }).withMessage('Company name cannot exceed 100 characters')
+    .escape(), // Sanitize company
+
+  check('message')
+    .trim()
+    .notEmpty().withMessage('Message is required')
+    .isLength({ max: 1000 }).withMessage('Message cannot exceed 1000 characters')
+    .escape() // Sanitize message
+];
+
+// Email API endpoint with rate limiting, validation, and logging
+app.post('/api/send-email', rateLimiter, validateEmail, logEmail, async (req, res) => {
+  // Check for validation errors
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Validation failed', 
+      errors: errors.array() 
+    });
+  }
+
   try {
     const { name, email, company, message } = req.body;
-    
-    // Validate required fields
-    if (!name || !email || !message) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Name, email, and message are required fields' 
-      });
-    }
-    
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Please provide a valid email address' 
-      });
-    }
-    
+
     // Email template
     const mailOptions = {
       from: `"${config.email.sender_name}" <${config.email.user}>`,
@@ -203,4 +230,4 @@ app.listen(PORT, () => {
 })
 .on('error', (err) => {
   console.error('Failed to start server:', err);
-}); 
+});

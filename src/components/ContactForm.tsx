@@ -39,10 +39,19 @@ const ContactForm: React.FC = () => {
         body: JSON.stringify(formValues),
       });
       
-      const responseData = await response.json();
+      // Get the full response text for better debugging
+      const responseText = await response.text();
+      let responseData;
+      try {
+        responseData = JSON.parse(responseText);
+      } catch (e) {
+        console.error("Failed to parse response as JSON:", responseText);
+        responseData = { message: "Server returned invalid JSON response" };
+      }
       
       if (!response.ok) {
-        throw new Error(responseData.message || 'Failed to send message');
+        console.error("Server responded with error:", response.status, responseData);
+        throw new Error(responseData.message || `Error ${response.status}: Failed to send message`);
       }
       
       console.log("Email sent successfully:", responseData);
@@ -59,7 +68,7 @@ const ContactForm: React.FC = () => {
       console.error("Failed to send email:", error);
       toast({
         title: "Error sending message",
-        description: "Please try again or contact us directly at vikashinnamuri@gmail.com or lohapriyamanthiram@gmail.com",
+        description: `${error.message || "Please try again or contact us directly at vikashinnamuri@gmail.com or lohapriyamanthiram@gmail.com"}`,
         variant: "destructive"
       });
     } finally {

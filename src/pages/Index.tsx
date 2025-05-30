@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import WebGLBackground from '@/components/WebGLBackground';
+// import WebGLBackground from '@/components/WebGLBackground';
 import Navbar from '@/components/Navbar';
 import StatCard from '@/components/StatCard';
 import ServiceCard from '@/components/ServiceCard';
@@ -7,11 +7,22 @@ import IndustrySection from '@/components/IndustrySection';
 import ApproachSection from '@/components/ApproachSection';
 import ContactForm from '@/components/ContactForm';
 import { BackgroundPaths } from '@/components/ui/background-paths';
-import { Search, Info, Users, Settings, Star, Heart, ShoppingCart, Truck, GraduationCap, Code, Bot, Activity, Database, CircuitBoard, Shield } from 'lucide-react';
+import { Search, Info, Users, Settings, Star, Heart, ShoppingCart, Truck, GraduationCap, Code, Bot, Activity, Database, CircuitBoard, Shield, Copy, Check } from 'lucide-react';
 import DisplayCards from "@/components/ui/display-cards";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Index = () => {
+  const [copiedItem, setCopiedItem] = useState<string | null>(null);
+
+  const handleCopy = (text: string, itemName: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedItem(itemName);
+      setTimeout(() => setCopiedItem(null), 2000); // Reset after 2 seconds
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      // Optionally, show an error toast
+    });
+  };
   const [activeFeature, setActiveFeature] = useState(0);
   
   useEffect(() => {
@@ -189,7 +200,7 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-quikwink-dark to-quikwink-darker overflow-x-hidden">
-      <WebGLBackground />
+      {/* <WebGLBackground /> */}
       <Navbar />
       
       {/* Hero Section */}
@@ -401,19 +412,103 @@ const Index = () => {
                   <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
                     <Info size={16} className="text-quikwink-neon" />
                   </div>
-                  <span className="text-white/80">vikashinnamuri@gmail.com</span>
+                  <span 
+                    className="text-white/80 cursor-pointer hover:text-quikwink-neon transition-colors duration-200 relative group flex items-center"
+                    onClick={() => handleCopy('vikashinnamuri@gmail.com', 'email1')}
+                  >
+                    vikashinnamuri@gmail.com
+                    <AnimatePresence mode="wait">
+                      {copiedItem === 'email1' ? (
+                        <motion.div
+                          key="check1"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.5 }}
+                          className="ml-2 text-green-500"
+                        >
+                          <Check size={16} />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="copy1"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.5 }}
+                          className="ml-2 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        >
+                          <Copy size={14} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
                     <Info size={16} className="text-quikwink-neon" />
                   </div>
-                  <span className="text-white/80">lohapriyamanthiram@gmail.com</span>
+                  <span 
+                    className="text-white/80 cursor-pointer hover:text-quikwink-neon transition-colors duration-200 relative group flex items-center"
+                    onClick={() => handleCopy('lohapriyamanthiram@gmail.com', 'email2')}
+                  >
+                    lohapriyamanthiram@gmail.com
+                    <AnimatePresence mode="wait">
+                      {copiedItem === 'email2' ? (
+                        <motion.div
+                          key="check2"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.5 }}
+                          className="ml-2 text-green-500"
+                        >
+                          <Check size={16} />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="copy2"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.5 }}
+                          className="ml-2 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        >
+                          <Copy size={14} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
                     <Info size={16} className="text-quikwink-neon" />
                   </div>
-                  <span className="text-white/80">+91 7013132784</span>
+                  <span 
+                    className="text-white/80 cursor-pointer hover:text-quikwink-neon transition-colors duration-200 relative group flex items-center"
+                    onClick={() => handleCopy('+91 7013132784', 'phone')}
+                  >
+                    +91 7013132784
+                    <AnimatePresence mode="wait">
+                      {copiedItem === 'phone' ? (
+                        <motion.div
+                          key="check3"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.5 }}
+                          className="ml-2 text-green-500"
+                        >
+                          <Check size={16} />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="copy3"
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.5 }}
+                          className="ml-2 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        >
+                          <Copy size={14} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </span>
                 </div>
               </div>
             </div>

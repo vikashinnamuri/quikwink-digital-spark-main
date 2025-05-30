@@ -15,14 +15,14 @@ module.exports = {
   port: process.env.PORT || 3000,
   
   // Client URL for CORS (update the default for your production domain)
-  clientURL: process.env.CLIENT_URL || 'https://quikwink.com',
+  clientURL: process.env.CLIENT_URL || 'http://localhost:8080',
   
   // Email settings
   email: {
     // Gmail account details (use environment variables in production)
-    user: process.env.EMAIL_USER || 'lohapriyamanthiram@gmail.com',
-    pass: process.env.EMAIL_PASS || 'fxhf xajp uodi dahu',
-    recipient: process.env.EMAIL_RECIPIENT || 'vikashinnamuri@gmail.com, lohapriyamanthiram@gmail.com',
+    user: process.env.EMAIL_USER || 'vikashinnamuri@gmail.com',
+    pass: process.env.EMAIL_PASS || 'taxj ixgk udxn auaq',
+    recipient: process.env.EMAIL_RECIPIENT || 'vikashinnamuri@gmail.com,lohapriyamanthiram@gmail.com',
     
     // Email options
     sender_name: process.env.SENDER_NAME || 'Quikwink Contact Form',
@@ -33,7 +33,8 @@ module.exports = {
       service: process.env.EMAIL_SERVICE || 'gmail',
       host: process.env.EMAIL_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: process.env.EMAIL_SECURE === 'true' ? true : false
+      secure: process.env.EMAIL_SECURE === 'true' ? false : false // Set to false for port 587
     }
   }
-}; 
+};
+
