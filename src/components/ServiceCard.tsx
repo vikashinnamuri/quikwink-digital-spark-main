@@ -12,7 +12,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
   
   return (
     <motion.div 
-      className="relative rounded-xl p-6 bg-quikwink-dark/80 backdrop-blur-sm border border-white/10 
+      className="relative rounded-xl p-6 bg-quickwink-dark/80 backdrop-blur-sm border border-white/10 
                 transition-all duration-300 shadow-lg h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -23,7 +23,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
       }}
     >
       <motion.div 
-        className="flex items-center justify-center h-16 w-16 rounded-lg mb-4 bg-quikwink-neon/10"
+        className="flex items-center justify-center h-16 w-16 rounded-lg mb-4 bg-quickwink-neon/10"
         animate={{
           scale: isHovered ? 1.1 : 1,
         }}
@@ -34,7 +34,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
       >
         {React.cloneElement(icon as React.ReactElement, { 
           size: 32, 
-          className: `text-quikwink-neon transition-colors duration-300 ${isHovered ? 'text-quikwink-neon-bright' : ''}`,
+          className: `text-quickwink-neon transition-colors duration-300 ${isHovered ? 'text-quickwink-neon-bright' : ''}`,
         })}
       </motion.div>
       <h3 className="heading-sm mb-3">{title}</h3>

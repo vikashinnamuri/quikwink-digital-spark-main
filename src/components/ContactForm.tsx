@@ -21,10 +21,10 @@ const ContactForm: React.FC = () => {
       
       // Extract form values for direct email server
       const formValues = {
-        name: formElement.name.value,
-        email: formElement.email.value,
-        company: formElement.company.value || '',
-        message: formElement.message.value
+        name: (formElement.elements.namedItem('name') as HTMLInputElement).value,
+        email: (formElement.elements.namedItem('email') as HTMLInputElement).value,
+        company: (formElement.elements.namedItem('company') as HTMLInputElement)?.value || '',
+        message: (formElement.elements.namedItem('message') as HTMLInputElement).value
       };
       
       // Log what we're sending
@@ -82,20 +82,20 @@ const ContactForm: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <form onSubmit={handleSubmit} className="card-custom bg-quikwink-darkest/70 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-lg">
+      <form onSubmit={handleSubmit} className="card-custom bg-quickwink-darkest/70 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div className="relative">
             <label htmlFor="name" className="block mb-2 text-white/80 font-medium">
               Name
             </label>
             <div className="relative">
-              <User className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'name' ? 'text-quikwink-neon' : 'text-white/50'}`} />
+              <User className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'name' ? 'text-quickwink-neon' : 'text-white/50'}`} />
               <input
                 type="text"
                 id="name" 
                 name="name"
                 required
-                className="w-full bg-quikwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quikwink-neon focus:border-transparent text-white transition-all duration-200"
+                className="w-full bg-quickwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quickwink-neon focus:border-transparent text-white transition-all duration-200"
                 placeholder="Your name"
                 onFocus={() => setFocusedField('name')}
                 onBlur={() => setFocusedField(null)}
@@ -107,13 +107,13 @@ const ContactForm: React.FC = () => {
               Email
             </label>
             <div className="relative">
-              <Mail className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'email' ? 'text-quikwink-neon' : 'text-white/50'}`} />
+              <Mail className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'email' ? 'text-quickwink-neon' : 'text-white/50'}`} />
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                className="w-full bg-quikwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quikwink-neon focus:border-transparent text-white transition-all duration-200"
+                className="w-full bg-quickwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quickwink-neon focus:border-transparent text-white transition-all duration-200"
                 placeholder="your@email.com"
                 onFocus={() => setFocusedField('email')}
                 onBlur={() => setFocusedField(null)}
@@ -127,12 +127,12 @@ const ContactForm: React.FC = () => {
             Company
           </label>
           <div className="relative">
-            <Building2 className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'company' ? 'text-quikwink-neon' : 'text-white/50'}`} />
+            <Building2 className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'company' ? 'text-quickwink-neon' : 'text-white/50'}`} />
             <input
               type="text"
               id="company"
               name="company"
-              className="w-full bg-quikwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quikwink-neon focus:border-transparent text-white transition-all duration-200"
+              className="w-full bg-quickwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quickwink-neon focus:border-transparent text-white transition-all duration-200"
               placeholder="Your company (optional)"
               onFocus={() => setFocusedField('company')}
               onBlur={() => setFocusedField(null)}
@@ -145,13 +145,13 @@ const ContactForm: React.FC = () => {
             Message
           </label>
           <div className="relative">
-            <MessageSquare className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'message' ? 'text-quikwink-neon' : 'text-white/50'}`} />
+            <MessageSquare className={`absolute left-3 top-3.5 h-5 w-5 transition-colors duration-200 ${focusedField === 'message' ? 'text-quickwink-neon' : 'text-white/50'}`} />
             <textarea
               id="message"
               name="message"
               required
               rows={5}
-              className="w-full bg-quikwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quikwink-neon focus:border-transparent text-white resize-none transition-all duration-200"
+              className="w-full bg-quickwink-dark/50 border border-white/10 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-quickwink-neon focus:border-transparent text-white resize-none transition-all duration-200"
               placeholder="How can we help you?"
               onFocus={() => setFocusedField('message')}
               onBlur={() => setFocusedField(null)}

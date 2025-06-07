@@ -1,8 +1,8 @@
-# Quikwink Digital Solutions
+# Quickwink Digital Solutions
 
 ## About This Project
 
-Quikwink is a modern tech company that specializes in AI solutions and custom software development. This repository contains the code for the Quikwink marketing website.
+Quickwink is a modern tech company that specializes in AI solutions and custom software development. This repository contains the code for the Quickwink marketing website.
 
 ## Project Features
 
@@ -22,7 +22,7 @@ Follow these steps to run the project locally:
 git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory
-cd quikwink-digital-spark
+cd quickwink-digital-spark
 
 # Step 3: Install the necessary dependencies
 npm i

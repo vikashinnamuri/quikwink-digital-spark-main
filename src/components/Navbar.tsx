@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-        ? 'py-3 bg-quikwink-darker/90 backdrop-blur-md shadow-lg border-b border-white/5' 
+        ? 'py-3 bg-quickwink-darker/90 backdrop-blur-md shadow-lg border-b border-white/5' 
         : 'py-5 bg-transparent'
       }`}
     >
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           whileTap={{ scale: 0.95 }}
         >
           <span className="text-2xl font-display font-bold text-white">
-            <span className="text-gradient">Quik</span>wink
+            <span className="text-gradient">Quick</span>wink
           </span>
         </motion.a>
         
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
               {activeSection === link.id && (
                 <motion.div 
                   layoutId="activeIndicator"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-quikwink-neon"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-quickwink-neon"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
         
         {/* Mobile Menu Button */}
         <motion.button 
-          className="md:hidden text-white p-2 rounded-lg hover:bg-quikwink-neon/10 transition-colors"
+          className="md:hidden text-white p-2 rounded-lg hover:bg-quickwink-neon/10 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           whileHover={{ scale: 1.1 }}
@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            className="md:hidden absolute top-full left-0 right-0 bg-quikwink-darker/95 backdrop-blur-md shadow-lg border-t border-white/5 py-4"
+            className="md:hidden absolute top-full left-0 right-0 bg-quickwink-darker/95 backdrop-blur-md shadow-lg border-t border-white/5 py-4"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
                   href={link.href} 
                   className={`${
                     activeSection === link.id 
-                    ? 'text-white font-medium bg-quikwink-neon/10 border-l-2 border-quikwink-neon pl-4' 
+                    ? 'text-white font-medium bg-quickwink-neon/10 border-l-2 border-quickwink-neon pl-4' 
                     : 'text-white/70 hover:text-white pl-4 border-l-2 border-transparent'
                   } transition-all py-3 rounded-r-lg`}
                   onClick={() => setIsMenuOpen(false)}

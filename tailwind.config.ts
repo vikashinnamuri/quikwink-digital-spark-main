@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,12 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				quikwink: {
-					dark: '#101424',
-					darker: '#0A0E1A',
-					darkest: '#050810',
+				quickwink: {
 					neon: '#00BFFF',
-					'neon-bright': '#40FFFF',
+					'neon-bright': '#33DDFF',
+					dark: '#0A0A0A',
+					darker: '#050505',
+					darkest: '#000000',
 				}
 			},
 			borderRadius: {
@@ -147,6 +146,10 @@ export default {
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],
 				'display': ['Space Grotesk', 'sans-serif'],
+			},
+			boxShadow: {
+				'glow': '0 0 30px rgba(0,191,255,0.7)',
+				'glow-sm': '0 0 10px rgba(0,191,255,0.5)'
 			}
 		}
 	},

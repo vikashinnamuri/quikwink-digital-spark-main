@@ -1,6 +1,6 @@
-# Quikwink Website Deployment Guide
+# Quickwink Website Deployment Guide
 
-This guide provides instructions for deploying the Quikwink website to a production server.
+This guide provides instructions for deploying the Quickwink website to a production server.
 
 ## Prerequisites
 
@@ -30,14 +30,14 @@ PORT=3000
 NODE_ENV=production
 
 # Client URL for CORS
-CLIENT_URL=https://quikwink.com
+CLIENT_URL=https://quickwink.com
 
 # Email configuration
 EMAIL_USER=lohapriyamanthiram@gmail.com
 EMAIL_PASS=your_app_password_here
 EMAIL_RECIPIENT=vikashinnamuri@gmail.com, lohapriyamanthiram@gmail.com
-SENDER_NAME=Quikwink Contact Form
-SUBJECT_PREFIX=Quikwink Contact: 
+SENDER_NAME=Quickwink Contact Form
+SUBJECT_PREFIX=Quickwink Contact: 
 
 # SMTP configuration (Gmail)
 EMAIL_SERVICE=gmail
@@ -87,7 +87,7 @@ For production, it's recommended to use a process manager like PM2:
 ```bash
 npm install -g pm2
 cd server
-pm2 start server.js --name "quikwink-server"
+pm2 start server.js --name "quickwink-server"
 ```
 
 ## Setting Up a Domain Name

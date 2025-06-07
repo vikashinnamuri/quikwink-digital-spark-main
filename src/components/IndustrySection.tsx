@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface Industry {
@@ -24,7 +23,7 @@ const IndustrySection: React.FC<IndustrySectionProps> = ({ industries }) => {
               onClick={() => setActiveIndustry(industry)}
               className={`text-left py-4 px-6 mb-2 rounded-lg transition-all duration-300 md:border-l-4 ${
                 activeIndustry.name === industry.name
-                  ? 'bg-quikwink-neon/10 md:border-l-quikwink-neon text-white'
+                  ? 'bg-quickwink-neon/10 md:border-l-quickwink-neon text-white'
                   : 'md:border-l-transparent text-white/60 hover:text-white/90'
               }`}
             >
@@ -40,7 +39,7 @@ const IndustrySection: React.FC<IndustrySectionProps> = ({ industries }) => {
           <ul className="space-y-3 mb-6">
             {activeIndustry.challenges.map((challenge, index) => (
               <li key={index} className="flex items-start">
-                <span className="inline-block mr-2 mt-1 h-2 w-2 rounded-full bg-quikwink-neon"></span>
+                <span className="inline-block mr-2 mt-1 h-2 w-2 rounded-full bg-quickwink-neon"></span>
                 <span className="text-white/80">{challenge}</span>
               </li>
             ))}

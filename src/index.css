@@ -40,11 +40,11 @@
 
 @layer base {
   * {
-    @apply border-border selection:bg-quikwink-neon/20 selection:text-white;
+    @apply border-border selection:bg-quickwink-neon/20 selection:text-white;
   }
   
   body {
-    @apply bg-quikwink-dark text-foreground antialiased;
+    @apply bg-quickwink-dark text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
@@ -58,11 +58,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-quikwink-dark;
+    @apply bg-quickwink-dark;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-quikwink-neon/30 rounded-full transition-colors hover:bg-quikwink-neon/50;
+    @apply bg-quickwink-neon/30 rounded-full transition-colors hover:bg-quickwink-neon/50;
   }
 }
 
@@ -88,15 +88,15 @@
   }
   
   .link-neon {
-    @apply text-quikwink-neon hover:text-quikwink-neon-bright transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-quikwink-neon after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300;
+    @apply text-quickwink-neon hover:text-quickwink-neon-bright transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-quickwink-neon after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300;
   }
 
   .btn-primary {
-    @apply bg-quikwink-neon text-black font-medium rounded-lg px-6 py-3 inline-flex items-center justify-center hover:bg-quikwink-neon-bright transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,191,255,0.5)] focus:outline-none focus:ring-2 focus:ring-quikwink-neon focus:ring-offset-2 focus:ring-offset-quikwink-dark hover:-translate-y-1;
+    @apply bg-quickwink-neon text-black font-medium rounded-lg px-6 py-3 inline-flex items-center justify-center hover:bg-quickwink-neon-bright transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,191,255,0.5)] focus:outline-none focus:ring-2 focus:ring-quickwink-neon focus:ring-offset-2 focus:ring-offset-quickwink-dark hover:-translate-y-1;
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-quikwink-neon text-quikwink-neon font-medium rounded-lg px-6 py-3 inline-flex items-center justify-center hover:bg-quikwink-neon/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,191,255,0.3)] focus:outline-none focus:ring-2 focus:ring-quikwink-neon focus:ring-offset-2 focus:ring-offset-quikwink-dark hover:-translate-y-1;
+    @apply bg-transparent border border-quickwink-neon text-quickwink-neon font-medium rounded-lg px-6 py-3 inline-flex items-center justify-center hover:bg-quickwink-neon/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,191,255,0.3)] focus:outline-none focus:ring-2 focus:ring-quickwink-neon focus:ring-offset-2 focus:ring-offset-quickwink-dark hover:-translate-y-1;
   }
   
   .neon-glow {
@@ -112,15 +112,15 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-quikwink-neon to-quikwink-neon-bright bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-quickwink-neon to-quickwink-neon-bright bg-clip-text text-transparent;
   }
 
   .card-custom {
-    @apply bg-secondary/80 backdrop-blur-sm border border-white/5 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-quikwink-neon/20;
+    @apply bg-secondary/80 backdrop-blur-sm border border-white/5 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-quickwink-neon/20;
   }
 
   .section-divider {
-    @apply w-full h-[2px] bg-gradient-to-r from-transparent via-quikwink-neon/40 to-transparent opacity-30 my-20;
+    @apply w-full h-[2px] bg-gradient-to-r from-transparent via-quickwink-neon/40 to-transparent opacity-30 my-20;
   }
   
   /* Animation classes */

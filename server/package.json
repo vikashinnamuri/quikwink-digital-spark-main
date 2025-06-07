@@ -1,7 +1,7 @@
 {
-  "name": "quikwink-email-server",
+  "name": "quickwink-email-server",
   "version": "1.0.0",
-  "description": "Email server for Quikwink",
+  "description": "Email server for Quickwink",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

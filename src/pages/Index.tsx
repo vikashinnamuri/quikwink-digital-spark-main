@@ -26,7 +26,7 @@ const Index = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   
   useEffect(() => {
-    document.title = "Quikwink - Speed Meets Intelligence";
+    document.title = "Quickwink - Speed Meets Intelligence";
     
     // Auto-advance the feature showcase
     const interval = setInterval(() => {
@@ -40,19 +40,19 @@ const Index = () => {
     {
       title: "AI-Powered Analytics",
       description: "Transform your data into actionable insights with our machine learning solutions that identify patterns humans might miss.",
-      icon: <Star className="text-quikwink-neon size-12" />,
+      icon: <Star className="text-quickwink-neon size-12" />,
       color: "from-blue-500/20 to-cyan-400/20"
     },
     {
       title: "Enterprise Integration",
       description: "Seamlessly connect your existing systems with our custom APIs and middleware solutions for improved data flow.",
-      icon: <Settings className="text-quikwink-neon size-12" />,
+      icon: <Settings className="text-quickwink-neon size-12" />,
       color: "from-purple-500/20 to-pink-400/20"
     },
     {
       title: "Security First Design",
       description: "Build with confidence knowing that every solution we develop prioritizes data protection and compliance.",
-      icon: <Users className="text-quikwink-neon size-12" />,
+      icon: <Users className="text-quickwink-neon size-12" />,
       color: "from-green-500/20 to-emerald-400/20"
     }
   ];
@@ -149,57 +149,57 @@ const Index = () => {
 
   const industryCards = [
     {
-      icon: <Bot className="size-10 text-quikwink-neon" />,
+      icon: <Bot className="size-10 text-quickwink-neon" />,
       title: "Automation",
       description: "Transform repetitive tasks into automated workflows that reduce errors and free up your team to focus on strategic initiatives.",
-      iconClassName: "text-quikwink-neon",
+      iconClassName: "text-quickwink-neon",
       titleClassName: "text-white",
-      className: "hover:border-quikwink-neon/30"
+      className: "hover:border-quickwink-neon/30"
     },
     {
-      icon: <Code className="size-10 text-quikwink-neon" />,
+      icon: <Code className="size-10 text-quickwink-neon" />,
       title: "Full Stack Development",
       description: "Build resilient, scalable platforms and applications with our comprehensive development expertise across frontend, backend, and DevOps.",
-      iconClassName: "text-quikwink-neon",
+      iconClassName: "text-quickwink-neon",
       titleClassName: "text-white",
-      className: "hover:border-quikwink-neon/30"
+      className: "hover:border-quickwink-neon/30"
     },
     {
-      icon: <Activity className="size-10 text-quikwink-neon" />,
+      icon: <Activity className="size-10 text-quickwink-neon" />,
       title: "Business Analysis",
       description: "Identify opportunities for improvement and innovation with our comprehensive business analysis services that align technology with goals.",
-      iconClassName: "text-quikwink-neon",
+      iconClassName: "text-quickwink-neon",
       titleClassName: "text-white",
-      className: "hover:border-quikwink-neon/30"
+      className: "hover:border-quickwink-neon/30"
     },
     {
-      icon: <Database className="size-10 text-quikwink-neon" />,
+      icon: <Database className="size-10 text-quickwink-neon" />,
       title: "Data Science",
       description: "Extract meaningful insights from your data with advanced analytics, statistical modeling, and visualization techniques that support decisions.",
-      iconClassName: "text-quikwink-neon",
+      iconClassName: "text-quickwink-neon",
       titleClassName: "text-white",
-      className: "hover:border-quikwink-neon/30"
+      className: "hover:border-quickwink-neon/30"
     },
     {
-      icon: <CircuitBoard className="size-10 text-quikwink-neon" />,
+      icon: <CircuitBoard className="size-10 text-quickwink-neon" />,
       title: "ML Implementation",
       description: "Enhance your business capabilities with custom machine learning models that recognize patterns, make predictions, and continuously improve.",
-      iconClassName: "text-quikwink-neon",
+      iconClassName: "text-quickwink-neon",
       titleClassName: "text-white",
-      className: "hover:border-quikwink-neon/30"
+      className: "hover:border-quickwink-neon/30"
     },
     {
-      icon: <Star className="size-10 text-quikwink-neon" />,
+      icon: <Star className="size-10 text-quickwink-neon" />,
       title: "AI Development",
       description: "Create intelligent systems and applications that adapt to your business needs with our end-to-end AI development services and expertise.",
-      iconClassName: "text-quikwink-neon",
+      iconClassName: "text-quickwink-neon",
       titleClassName: "text-white",
-      className: "hover:border-quikwink-neon/30"
+      className: "hover:border-quickwink-neon/30"
     }
   ];
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-quikwink-dark to-quikwink-darker overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-quickwink-dark to-quickwink-darker overflow-x-hidden">
       {/* <WebGLBackground /> */}
       <Navbar />
       
@@ -227,7 +227,7 @@ const Index = () => {
       </section>
       
       {/* Problem/Solution Snippets */}
-      <section id="problems" className="bg-quikwink-darkest/50">
+      <section id="problems" className="bg-quickwink-darkest/50">
         <div className="container-section py-12">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="card-custom">
@@ -258,7 +258,7 @@ const Index = () => {
       <section id="credibility">
         <div className="container-section">
           <h2 className="heading-lg text-center mb-16">
-            Why Partner with <span className="text-gradient">Quikwink</span>?
+            Why Partner with <span className="text-gradient">Quickwink</span>?
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
@@ -278,7 +278,7 @@ const Index = () => {
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
-                    className={`cursor-pointer p-4 rounded-lg transition-all duration-300 border ${activeFeature === index ? 'border-quikwink-neon bg-quikwink-neon/10' : 'border-white/5'}`}
+                    className={`cursor-pointer p-4 rounded-lg transition-all duration-300 border ${activeFeature === index ? 'border-quickwink-neon bg-quickwink-neon/10' : 'border-white/5'}`}
                     onClick={() => setActiveFeature(index)}
                     whileHover={{ x: 5 }}
                     animate={{ opacity: activeFeature === index ? 1 : 0.7 }}
@@ -305,7 +305,7 @@ const Index = () => {
                   <p className="text-white/80">{features[activeFeature].description}</p>
                   
                   <motion.div 
-                    className="absolute bottom-2 right-2 w-32 h-32 rounded-full bg-quikwink-neon/10"
+                    className="absolute bottom-2 right-2 w-32 h-32 rounded-full bg-quickwink-neon/10"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.1, 0.2, 0.1]
@@ -387,7 +387,7 @@ const Index = () => {
               We believe technology should simplify complexity, not add to it.
             </p>
             <p className="text-white/70 text-center mb-4">
-              At Quikwink, we're committed to developing intelligent solutions that deliver meaningful business outcomes. Our team of experts combines deep technical knowledge with strategic business acumen to ensure every solution we build drives measurable impact.
+              At Quickwink, we're committed to developing intelligent solutions that deliver meaningful business outcomes. Our team of experts combines deep technical knowledge with strategic business acumen to ensure every solution we build drives measurable impact.
             </p>
             <p className="text-white/70 text-center">
               We prioritize long-term partnerships over short-term gains, investing in understanding your unique challenges and opportunities to deliver solutions that truly transform how you operate.
@@ -405,15 +405,15 @@ const Index = () => {
             <div>
               <h2 className="heading-lg mb-4">Ready to Transform Your Business?</h2>
               <p className="text-white/70 mb-6">
-                Let's discuss how Quikwink can help you leverage technology to overcome challenges and unlock new opportunities.
+                Let's discuss how Quickwink can help you leverage technology to overcome challenges and unlock new opportunities.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
-                    <Info size={16} className="text-quikwink-neon" />
+                  <div className="w-8 h-8 rounded-full bg-quickwink-neon/10 flex items-center justify-center mr-4">
+                    <Info size={16} className="text-quickwink-neon" />
                   </div>
                   <span 
-                    className="text-white/80 cursor-pointer hover:text-quikwink-neon transition-colors duration-200 relative group flex items-center"
+                    className="text-white/80 cursor-pointer hover:text-quickwink-neon transition-colors duration-200 relative group flex items-center"
                     onClick={() => handleCopy('vikashinnamuri@gmail.com', 'email1')}
                   >
                     vikashinnamuri@gmail.com
@@ -443,11 +443,11 @@ const Index = () => {
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
-                    <Info size={16} className="text-quikwink-neon" />
+                  <div className="w-8 h-8 rounded-full bg-quickwink-neon/10 flex items-center justify-center mr-4">
+                    <Info size={16} className="text-quickwink-neon" />
                   </div>
                   <span 
-                    className="text-white/80 cursor-pointer hover:text-quikwink-neon transition-colors duration-200 relative group flex items-center"
+                    className="text-white/80 cursor-pointer hover:text-quickwink-neon transition-colors duration-200 relative group flex items-center"
                     onClick={() => handleCopy('lohapriyamanthiram@gmail.com', 'email2')}
                   >
                     lohapriyamanthiram@gmail.com
@@ -477,11 +477,11 @@ const Index = () => {
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-quikwink-neon/10 flex items-center justify-center mr-4">
-                    <Info size={16} className="text-quikwink-neon" />
+                  <div className="w-8 h-8 rounded-full bg-quickwink-neon/10 flex items-center justify-center mr-4">
+                    <Info size={16} className="text-quickwink-neon" />
                   </div>
                   <span 
-                    className="text-white/80 cursor-pointer hover:text-quikwink-neon transition-colors duration-200 relative group flex items-center"
+                    className="text-white/80 cursor-pointer hover:text-quickwink-neon transition-colors duration-200 relative group flex items-center"
                     onClick={() => handleCopy('+91 7013132784', 'phone')}
                   >
                     +91 7013132784
@@ -519,12 +519,12 @@ const Index = () => {
       </section>
       
       {/* Footer */}
-      <footer className="bg-quikwink-darkest">
+      <footer className="bg-quickwink-darkest">
         <div className="container-section py-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
               <span className="text-2xl font-display font-bold text-white">
-                <span className="text-gradient">Quik</span>wink
+                <span className="text-gradient">Quick</span>wink
               </span>
             </div>
             
@@ -536,7 +536,7 @@ const Index = () => {
             </div>
             
             <div className="mt-4 md:mt-0 text-sm text-white/40">
-              &copy; {new Date().getFullYear()} Quikwink. All rights reserved.
+              &copy; {new Date().getFullYear()} Quickwink. All rights reserved.
             </div>
           </div>
         </div>

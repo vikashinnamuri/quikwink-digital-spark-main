@@ -69,8 +69,8 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
             <motion.div 
               className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold 
                 transition-all duration-300 shadow-lg
-                ${activeStep >= step.number ? 'bg-quikwink-neon text-black' : 'bg-quikwink-dark text-white/70 border border-white/10'}
-                ${hoveredStep === step.number ? 'ring-2 ring-quikwink-neon ring-offset-2 ring-offset-black' : ''}
+                ${activeStep >= step.number ? 'bg-quickwink-neon text-black' : 'bg-quickwink-dark text-white/70 border border-white/10'}
+                ${hoveredStep === step.number ? 'ring-2 ring-quickwink-neon ring-offset-2 ring-offset-black' : ''}
               `}
               onHoverStart={() => setHoveredStep(step.number)}
               onHoverEnd={() => setHoveredStep(null)}
@@ -96,7 +96,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
                 animate={{ scaleX: activeStep > step.number ? 1 : 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <ArrowRight className={`w-full text-quikwink-neon/50 ${activeStep > step.number ? 'opacity-100' : 'opacity-30'}`} />
+                <ArrowRight className={`w-full text-quickwink-neon/50 ${activeStep > step.number ? 'opacity-100' : 'opacity-30'}`} />
               </motion.div>
             )}
           </motion.button>
@@ -106,7 +106,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
       {/* Approach steps content */}
       <div ref={containerRef} className="mt-24 relative">
         {/* Main timeline line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-quikwink-neon/70 via-quikwink-neon/40 to-quikwink-neon/10 rounded-full"></div>
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-quickwink-neon/70 via-quickwink-neon/40 to-quickwink-neon/10 rounded-full"></div>
         
         {steps.map((step) => (
           <motion.div 
@@ -121,7 +121,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
             <motion.div 
               className={`w-16 h-16 z-10 rounded-full flex items-center justify-center text-xl font-semibold 
                 backdrop-blur-md shadow-glow
-                ${activeStep >= step.number ? 'bg-quikwink-neon text-black' : 'bg-secondary/30 text-white/70 border border-white/10'}
+                ${activeStep >= step.number ? 'bg-quickwink-neon text-black' : 'bg-secondary/30 text-white/70 border border-white/10'}
                 transition-all duration-500 absolute left-0 md:left-1/2 md:-ml-8
               `}
               whileHover={{ scale: 1.1 }}
@@ -140,9 +140,9 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
             </motion.div>
             
             <motion.div 
-              className={`md:w-1/2 md:pr-16 md:text-right ml-24 md:ml-0 bg-quikwink-dark/30 backdrop-blur-sm p-6 rounded-xl border border-white/5
+              className={`md:w-1/2 md:pr-16 md:text-right ml-24 md:ml-0 bg-quickwink-dark/30 backdrop-blur-sm p-6 rounded-xl border border-white/5
                 ${step.number % 2 === 0 ? 'md:order-2 md:pl-16 md:pr-0 md:text-left md:ml-auto' : ''}
-                ${activeStep === step.number ? 'shadow-glow-sm border-quikwink-neon/20' : ''}
+                ${activeStep === step.number ? 'shadow-glow-sm border-quickwink-neon/20' : ''}
               `}
               whileHover={{ scale: 1.02 }}
               initial={{ x: step.number % 2 === 0 ? 50 : -50, opacity: 0 }}
@@ -150,7 +150,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h3 className={`heading-md mb-3 ${activeStep >= step.number ? 'text-quikwink-neon' : 'text-white/70'}`}>
+              <h3 className={`heading-md mb-3 ${activeStep >= step.number ? 'text-quickwink-neon' : 'text-white/70'}`}>
                 {step.title}
               </h3>
               <p className={`${activeStep >= step.number ? 'text-white/90' : 'text-white/50'}`}>
@@ -160,7 +160,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ steps }) => {
               {/* Visual indicator for active step */}
               {activeStep === step.number && (
                 <motion.div 
-                  className="w-2 h-2 rounded-full bg-quikwink-neon absolute top-3 right-3"
+                  className="w-2 h-2 rounded-full bg-quickwink-neon absolute top-3 right-3"
                   initial={{ scale: 0 }}
                   animate={{ scale: [1, 1.5, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}

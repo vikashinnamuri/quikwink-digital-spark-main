@@ -24,14 +24,14 @@ const DisplayCards = ({ cards }: DisplayCardsProps) => {
         <div
           key={index}
           className={cn(
-            "relative rounded-xl p-6 bg-quikwink-dark/80 backdrop-blur-sm border border-white/10",
+            "relative rounded-xl p-6 bg-quickwink-dark/80 backdrop-blur-sm border border-white/10",
             "transition-all duration-300 ease-out hover:shadow-[0_0_20px_rgba(0,191,255,0.15)] hover:-translate-y-2",
             "h-full flex flex-col shadow-lg",
-            "hover:border-quikwink-neon/30",
+            "hover:border-quickwink-neon/30",
             card.className
           )}
         >
-          <div className={cn("flex items-center justify-center h-16 w-16 rounded-lg mb-4 bg-quikwink-neon/10", card.iconClassName)}>
+          <div className={cn("flex items-center justify-center h-16 w-16 rounded-lg mb-4 bg-quickwink-neon/10", card.iconClassName)}>
             {card.icon}
           </div>
           <h3 className={cn("heading-sm mb-3", card.titleClassName)}>{card.title}</h3>

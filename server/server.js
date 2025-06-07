@@ -168,7 +168,7 @@ app.post('/api/send-email', rateLimiter, validateEmail, logEmail, async (req, re
       subject: `${config.email.subject_prefix}${name} from ${company || 'Not Specified'}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; border: 1px solid #eee; border-radius: 5px;">
-          <h2 style="color: #00BFFF; border-bottom: 1px solid #eee; padding-bottom: 10px;">New Message from Quikwink Contact Form</h2>
+          <h2 style="color: #00BFFF; border-bottom: 1px solid #eee; padding-bottom: 10px;">New Message from Quickwink Contact Form</h2>
           
           <div style="margin: 20px 0;">
             <p><strong>Name:</strong> ${name}</p>
@@ -182,7 +182,7 @@ app.post('/api/send-email', rateLimiter, validateEmail, logEmail, async (req, re
           </div>
           
           <div style="margin-top: 30px; font-size: 12px; color: #777; text-align: center;">
-            <p>This email was sent from the contact form on the Quikwink website.</p>
+            <p>This email was sent from the contact form on the Quickwink website.</p>
           </div>
         </div>
       `

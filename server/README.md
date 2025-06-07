@@ -1,6 +1,6 @@
-# Quikwink Email Server
+# Quickwink Email Server
 
-This is a simple Node.js server that provides direct email forwarding for the Quikwink website contact form.
+This is a simple Node.js server that provides direct email forwarding for the Quickwink website contact form.
 
 ## Setup Instructions
 
@@ -14,7 +14,7 @@ This is a simple Node.js server that provides direct email forwarding for the Qu
    - You'll need to generate an App Password from your Google account
    - Go to Google Account > Security > App passwords
    - Select "Mail" as the app and "Other" as the device
-   - Enter a name for the app password (e.g., "Quikwink Email Server")
+   - Enter a name for the app password (e.g., "Quickwink Email Server")
    - Click "Generate" and Google will provide you with a 16-character app password
 
 3. Configure the server:

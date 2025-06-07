@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface StatCardProps {
@@ -56,7 +55,7 @@ const StatCard: React.FC<StatCardProps> = ({ value, suffix, description }) => {
     <div ref={cardRef} className="card-custom flex flex-col items-center transform transition-all duration-500 hover:-translate-y-2">
       <div className="flex items-center justify-center mb-3">
         <span className="text-4xl md:text-5xl font-display font-bold text-white">{count}</span>
-        <span className="text-2xl md:text-3xl font-display font-bold text-quikwink-neon ml-1">{suffix}</span>
+        <span className="text-2xl md:text-3xl font-display font-bold text-quickwink-neon ml-1">{suffix}</span>
       </div>
       <p className="text-white/70 text-center">{description}</p>
     </div>

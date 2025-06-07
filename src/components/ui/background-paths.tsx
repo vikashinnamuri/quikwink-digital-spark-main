@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -13,15 +12,15 @@ function FloatingPaths({ position }: { position: number }) {
         } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
             684 - i * 5 * position
         } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-        // Enhanced color visibility with quikwink neon palette
-        color: `rgba(0, 191, 255, ${0.1 + i * 0.03})`, // Using quikwink-neon color
+        // Enhanced color visibility with quickwink neon palette
+        color: `rgba(0, 191, 255, ${0.1 + i * 0.03})`, // Using quickwink-neon color
         width: 0.5 + i * 0.03,
     }));
 
     return (
         <div className="absolute inset-0 pointer-events-none">
             <svg
-                className="w-full h-full text-quikwink-neon/20 dark:text-quikwink-neon/30"
+                className="w-full h-full text-quickwink-neon/20 dark:text-quickwink-neon/30"
                 viewBox="0 0 696 316"
                 fill="none"
             >

@@ -2,7 +2,7 @@
 
 # Start the email server
 echo "Starting email server..."
-cd server && npm install && npm start &
+cd server && npm install && npm start
 SERVER_PID=$!
 
 # Wait a bit for the server to initialize
@@ -10,7 +10,7 @@ sleep 2
 
 # Start the frontend
 echo "Starting frontend..."
-cd .. && npm run dev &
+cd .. && npm run dev
 FRONTEND_PID=$!
 
 # Handle termination

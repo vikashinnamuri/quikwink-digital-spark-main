@@ -6,7 +6,7 @@
  * 1. Go to your Google Account > Security > 2-Step Verification (enable if not already)
  * 2. Then go to App passwords
  * 3. Select "Mail" as the app and "Other" as the device
- * 4. Enter a name for the app password (e.g., "Quikwink Email Server")
+ * 4. Enter a name for the app password (e.g., "Quickwink Email Server")
  * 5. Click "Generate" and Google will provide you with a 16-character app password
  * 6. Copy that password and use it in your environment variables or .env file
  */
@@ -25,8 +25,8 @@ module.exports = {
     recipient: process.env.EMAIL_RECIPIENT || 'vikashinnamuri@gmail.com,lohapriyamanthiram@gmail.com',
     
     // Email options
-    sender_name: process.env.SENDER_NAME || 'Quikwink Contact Form',
-    subject_prefix: process.env.SUBJECT_PREFIX || 'Quikwink Contact: ',
+    sender_name: process.env.SENDER_NAME || 'Quickwink Contact Form',
+    subject_prefix: process.env.SUBJECT_PREFIX || 'Quickwink Contact: ',
     
     // SMTP configuration (optimized for Gmail)
     smtp: {
