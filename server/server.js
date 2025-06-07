@@ -224,10 +224,16 @@ if (process.env.NODE_ENV === 'production') {
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Current directory: ${process.cwd()}`);
   console.log(`Email server configured for: ${config.email.user}`);
   console.log(`App password being used: ${config.email.pass ? config.email.pass.substring(0, 3) + '***' : 'none'}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log('Email server is ready to send messages');
 })
 .on('error', (err) => {
   console.error('Failed to start server:', err);
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Please free up the port or change the server port.`);
+    process.exit(1);
+  }
 });
