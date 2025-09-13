@@ -387,7 +387,7 @@ const Index = () => {
               We believe technology should simplify complexity, not add to it.
             </p>
             <p className="text-white/70 text-center mb-4">
-              At Quickwink, we're committed to developing intelligent solutions that deliver meaningful business outcomes. Our team of experts combines deep technical knowledge with strategic business acumen to ensure every solution we build drives measurable impact.
+              To shape a future where businesses of all sizes operate with unmatched speed, intelligence, and agility—powered by AI and ML. At Quickwink, we envision a world where technology seamlessly removes barriers, accelerates decision-making, and empowers people to focus on innovation and growth rather than operational complexity.
             </p>
             <p className="text-white/70 text-center">
               We prioritize long-term partnerships over short-term gains, investing in understanding your unique challenges and opportunities to deliver solutions that truly transform how you operate.
