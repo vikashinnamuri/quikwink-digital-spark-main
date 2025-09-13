@@ -4,7 +4,7 @@ import { Mail, Send, User, Building2, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Use relative URL for production compatibility
-const EMAIL_SERVER_URL = '/api/send-email';
+const EMAIL_SERVER_URL = 'https://mail-backend-y2qj.onrender.com/api/send-email';
 
 const ContactForm: React.FC = () => {
   const { toast } = useToast();
@@ -38,7 +38,7 @@ const ContactForm: React.FC = () => {
         },
         body: JSON.stringify(formValues),
       });
-      
+      console.log(response,'this is the response')
       // Get the full response text for better debugging
       const responseText = await response.text();
       let responseData;
@@ -48,7 +48,7 @@ const ContactForm: React.FC = () => {
         console.error("Failed to parse response as JSON:", responseText);
         responseData = { message: "Server returned invalid JSON response" };
       }
-      
+      console.log(response)
       if (!response.ok) {
         console.error("Server responded with error:", response.status, responseData);
         throw new Error(responseData.message || `Error ${response.status}: Failed to send message`);
