@@ -93,20 +93,17 @@ const logEmail = (req, res, next) => {
   next();
 };
 
+console.log('SMTP Config:', config.email.smtp);
+
 // Create nodemailer transporter
 const transporter = nodemailer.createTransport({
   service: config.email.smtp.service,
   host: config.email.smtp.host,
   port: config.email.smtp.port,
-  secure: false, // Use STARTTLS for port 587
+  secure: config.email.smtp.port === 465, // Use true for port 465, false for other ports like 587
   auth: {
     user: config.email.user,
     pass: config.email.pass
-  },
-  tls: {
-    // Required for Gmail on port 587 with secure: false
-    ciphers: 'SSLv3',
-    rejectUnauthorized: false 
   }
 });
 

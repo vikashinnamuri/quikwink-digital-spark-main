@@ -218,8 +218,8 @@ const Index = () => {
               <a href="#contact" className="btn-primary">
                 Discuss Your Project
               </a>
-              <a href="#services" className="btn-secondary">
-                Explore Solutions
+              <a href="#industries" className="btn-secondary">
+                Explore Services
               </a>
             </div>
           </div>
@@ -328,7 +328,7 @@ const Index = () => {
       {/* Industries Section */}
       <section id="industries">
         <div className="container-section">
-          <h2 className="heading-lg text-center mb-4">Industries We Serve</h2>
+          <h2 className="heading-lg text-center mb-4">Services We Serve</h2>
           <p className="text-white/70 text-center max-w-2xl mx-auto mb-16">
             Our expertise spans across multiple domains, allowing us to deliver specialized solutions for various industry needs.
           </p>
@@ -529,11 +529,13 @@ const Index = () => {
             </div>
             
             <div className="flex space-x-8">
-              <a href="#services" className="text-white/60 hover:text-white transition-colors">Services</a>
-              <a href="#industries" className="text-white/60 hover:text-white transition-colors">Industries</a>
+              <a href="#industries" className="text-white/60 hover:text-white transition-colors">Services</a>
+              <a href="#services" className="text-white/60 hover:text-white transition-colors">Solutions</a>
               <a href="#approach" className="text-white/60 hover:text-white transition-colors">Approach</a>
               <a href="#contact" className="text-white/60 hover:text-white transition-colors">Contact</a>
             </div>
+            
+            
             
             <div className="mt-4 md:mt-0 text-sm text-white/40">
               &copy; {new Date().getFullYear()} Quickwink. All rights reserved.
